@@ -10,14 +10,31 @@ import org.slf4j.LoggerFactory;
 
 import Diginamic.demo_JDBC.exception.TechnicalException;
 
+/**
+ * classe permettant de tester différente requetes vers la base de données
+ * 
+ * @author Kevin.s
+ *
+ */
 public class TestCRUD {
 
+	/** SERVICE_LOG : Logger */
 	private static final Logger SERVICE_LOG = LoggerFactory.getLogger(TestCRUD.class);
 
+	/**
+	 * Constructeur
+	 * 
+	 */
 	public TestCRUD() {
 		super();
 	}
 
+	/**
+	 * initialise la base avec 4 articles
+	 * 
+	 * @param conn
+	 *            connection à la base
+	 */
 	public void initialisationArticleBdd(Connection conn) {
 		Statement myStatement = null;
 		try {
@@ -46,6 +63,12 @@ public class TestCRUD {
 		}
 	}
 
+	/**
+	 * augmente de 25% le prix des articles de plus de 10€
+	 * 
+	 * @param conn
+	 *            connection à la base
+	 */
 	public void augmentationTarif(Connection conn) {
 		Statement myStatement = null;
 		try {
@@ -67,6 +90,12 @@ public class TestCRUD {
 
 	}
 
+	/**
+	 * affiche les articles en base de données
+	 * 
+	 * @param conn
+	 *            connection à la base
+	 */
 	public void afficherArticle(Connection conn) {
 		Statement myStatement = null;
 		StringBuilder sBuild = new StringBuilder();
@@ -106,6 +135,12 @@ public class TestCRUD {
 		}
 	}
 
+	/**
+	 * affiche la moyenne des prix des articles en base de données
+	 * 
+	 * @param conn
+	 *            connection à la base
+	 */
 	public void afficherMoyArticle(Connection conn) {
 		Statement myStatement = null;
 		ResultSet resultSet = null;
@@ -140,6 +175,12 @@ public class TestCRUD {
 		}
 	}
 
+	/**
+	 * execute un truncate sur la table article de la base
+	 * 
+	 * @param conn
+	 *            connection à la base
+	 */
 	public void resetBdd(Connection conn) {
 		Statement myStatement = null;
 

@@ -18,6 +18,7 @@ import Diginamic.demo_JDBC.exception.TechnicalException;
  */
 public class TestConnexionJdbc {
 
+	/** SERVICE_LOG : Logger */
 	private static final Logger SERVICE_LOG = LoggerFactory.getLogger(TestConnexionJdbc.class);
 
 	public static void main(String[] args) {

@@ -19,8 +19,23 @@
 			</pattern>
 		</encoder>
 	</appender>
+	
+		<!-- redirection vers un fichier -->
+	<appender name="FILEOFF" class="ch.qos.logback.core.FileAppender">
+		<file>log/logOFF.log</file>
+		<append>true</append>
+		<immediateFlush>true</immediateFlush>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
 
 
+	<!-- politique de log pour les classes du package dev.console -->
+	<logger name="Diginamic.openFoodFactTp" level="INFO">
+		<appender-ref ref="FILEOFF" />
+	</logger>
 
 	<!-- politique de log pour les classes du package dev.console -->
 	<logger name="Diginamic.demo_JDBC" level="ERROR">
